@@ -12,7 +12,7 @@
 // Problem-2
 function checkName(name){
     const lastGoodCharacter = "ayieouw"
-    if(typeof name !== "string" ){
+    if(typeof name !== "string"){
         return "invalid"
     }else{
     const receivedName = name.toLocaleLowerCase()
@@ -24,10 +24,31 @@ function checkName(name){
      }
     }
 }
-// const receivedName = name.toLocaleLowerCase()
-// const lastCharacter = receivedName.charAt(receivedName.length-1);
-console.log(checkName("Salman"))
 // Problem-3
+function deleteInvalids(arr){
+    // let arr = [1 , null, undefined, 18, -19, NaN, "12", [1, 2], { ob: "lala" }];
+    // let arr = [1 , 2, -3]
+    // {num: [ 1 , 2 , 3 ]}
+    // ["1" , {num:2} , NaN ]
+    let createNewArr = [];
+    if(Array.isArray(arr) == false){
+        return "It's not an array"
+    }else{
+        for( let item of arr){
+            if(item == "NaN"){
+                continue;
+            }else if (typeof item == "number"){
+                createNewArr.push(item);
+            }
+        }
+    }
+    if(createNewArr.includes(NaN) == 1){
+
+        createNewArr.pop(NaN)
+    }
+    return createNewArr;
+}
+console.log(deleteInvalids(["1" , {num:2} , NaN ]))
 
 // Problem-4
 
