@@ -1,13 +1,18 @@
-function monthlySavings(arr, number){
-    // const arr = [ 1000 , 2000 , 3000 ]
-    if(Array.isArray(arr) === false || typeof number !== "number"){
+function monthlySavings(totalIncome, livingCost){
+    let taxAppliedAmount =0;
+    if(Array.isArray(totalIncome) === false || typeof livingCost !== "number"){
         return "invalid input”";
     }else{
         let sum =0;
-        for(let item of arr){
+        for(let item of totalIncome){
            sum += item
+           if(item >=3000){
+            taxAppliedAmount +=item
+           }
         }
-        const saving = sum-number;
+        let tax = taxAppliedAmount * .2;
+        let totalExpenditure = tax + livingCost
+        const saving = sum - totalExpenditure
         if(saving >=0){
             return saving;
         }else{
@@ -16,8 +21,4 @@ function monthlySavings(arr, number){
     }
 
 }
-// const arr = [ 1000 , 2000 , 3000 ]
-// const arr = [ 1000 , 2000 , 2500 ]
-const arr = [ 900 , 2700 , 3400]
-// const arr = 12;
-console.log(monthlySavings(arr, 10000))
+console.log(monthlySavings([ 1000 , 3000 , 3000 ], 5200))

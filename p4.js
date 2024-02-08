@@ -1,10 +1,4 @@
 function  password(obj){
-    // { name: "kolimuddin" , birthYear: 199 , siteName: "google" }
-    // { name: "rahat" , birthYear: 2002, siteName: "Facebook" }
-    // { name: "rahat" , birthYear: 200, siteName: "Facebook" }
-    // { name: "maisha" , birthYear: 2002 }
-    // { name: “maisha” , birthYear: 2002 }
-    // 12
     if(typeof obj == "object"){
         const keys = Object.keys(obj);
         const test =(obj.birthYear).toString().length;
@@ -20,4 +14,10 @@ function  password(obj){
         return "please provide an object."
     }
 }
+    // { name: "kolimuddin" , birthYear: 199 , siteName: "google" }
+    // { name: "rahat" , birthYear: 2002, siteName: "Facebook" }
+    // { name: "rahat" , birthYear: 200, siteName: "Facebook" }
+    // { name: "maisha" , birthYear: 2002 }
+    // { name: “maisha” , birthYear: 2002 }
+    // 12
 console.log(password({ name: "rahat" , birthYear: 2002, siteName: "Facebook" }));
